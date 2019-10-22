@@ -1,11 +1,109 @@
 @font-face {
-    font-family: 'hans_kendrickregular';
+    font-family: 'hans_kendrick';
     src: url('hanskendrick-regular-webfont.woff2') format('woff2'),
          url('hanskendrick-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
+$color-background: #e2e7ec;
+
 body {
-    background-color: aqua;
+    // background-color: aqua;
+    font-family: hans_kendrick, Arial, Helvetica, sans-serif;
+    background-color: $color-background;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+p {
+    color: #818181;
+}
+
+img:not(.ava) {
+    width: 100%;
+    // height: max-content;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    // position: relative;
+}
+
+.item1 {
+    grid-column: 1/3;
+    // grid-row: ;
+    position: relative;
+    color: white;
+}
+
+
+
+.item1:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(to bottom, #00000000, #000000 );
+    // opacity: .5;
+    // box-sizing: inherit;
+}
+
+.item1__content {
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin-left: 45px;
+    margin-bottom: 40px;
+}
+
+.item{
+    background-color: white;
+}
+
+.item__title {
+    font-size: 22px;
+}
+
+.item1__title {
+    font-size: 30px;
+}
+
+.date {
+    font-size: 13px;
+}
+
+.inner-grid {
+    // display: grid;
+    // grid-template-rows: 50%, 50%;
+    height: 100%;
+}
+
+.inner-item__content {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 20% 80% auto;
+    // flex-direction: column;
+    // justify-content: space-between;
+    align-content: space-between;
+    // height: 50%;
+    margin: 0 40px;
+}
+
+.ava {
+    align-self: end;
 }
