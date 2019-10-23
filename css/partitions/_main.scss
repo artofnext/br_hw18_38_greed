@@ -102,3 +102,69 @@ img:not(.ava) {
 .item4 p {
     visibility: hidden;
 }
+
+.loader {
+    position: relative;
+    margin: 0 auto;
+    max-width: 300px;
+}
+
+.loader__container {
+    margin: 0 auto;
+}
+
+.loader__title {
+    display: inline-block;
+    position: absolute;
+    // vertical-align: middle;
+    margin: 26px 20px;
+}
+
+
+.lds-spinner {
+    // color: official;
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+
+    margin: 20px auto;
+}
+
+.lds-spinner div {
+  transform-origin: 32px 32px;
+  animation: lds-spinner 1s linear infinite;
+}
+
+.lds-spinner div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 29px;
+  width: 5px;
+  height: 14px;
+  border-radius: 20%;
+  background: #000;
+}
+
+$number: 12;
+
+@for $i from 1 through  $number {
+    .lds-spinner div:nth-child( #{$i} ) {
+        $angle: (360 / $number) * $i;
+        transform: rotate(#{$angle}deg);
+        $delay: (($i - 1) / $number - 1) ;
+        animation-delay: #{$delay}s;
+    }
+}
+
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+  
